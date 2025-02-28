@@ -6,7 +6,7 @@ root = Tk()
 root.title("Python Clock")
 
 def current_time():
-    display_time = time.strftime("%H:%M:%S %p")
+    display_time = time.strftime("%I:%M:%S %p")
     digital_clock.config(text=display_time)
     digital_clock.after(200, current_time)
 
