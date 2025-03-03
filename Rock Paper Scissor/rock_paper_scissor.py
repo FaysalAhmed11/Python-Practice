@@ -101,5 +101,5 @@ button_rock = Button(window, width=16, height=3, text="ROCK", font=("arial", 20,
 button_paper = Button(window, width=16, height=3, text="PAPER", font=("arial", 20, "bold"),bg="red", fg="yellow",command=lambda:choice_update("paper")).grid(row=2, column=2)
 button_scissor = Button(window, width=16, height=3, text="SCISSOR", font=("arial", 20, "bold"),bg="red", fg="yellow",command=lambda:choice_update("scissor")).grid(row=2, column=3)
 
-# Execute Tkinter
+# Execute
 window.mainloop()
