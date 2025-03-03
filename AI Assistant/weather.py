@@ -11,7 +11,20 @@ from lxml.html.clean import clean_html
 import speech_to_text
 
 session = HTMLSession()
+
+import requests
+
+API_KEY = "your_api_key"
 query = "NL"
+url = f"http://api.openweathermap.org/data/2.5/weather?q={query}&appid={API_KEY}&units=metric"
+
+response = requests.get(url).json()
+print(response["main"]["temp"], "°C")
+
+
+
+
+'''query = "NL"
 url = f'https://www.google.com/search?q=weather+{query}'
 r = session.get(url, headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'})
 
@@ -21,7 +34,7 @@ temp = temp_elem.text if temp_elem else "Temperature not found"
 print(temp)
 
 
-'''temp = r.html.find('span#wob_tm', first= True).text
+temp = r.html.find('span#wob_tm', first= True).text
 
 unit = r.html.find('div.vk_bk.wob-unit span.wob_t', first= True).text
 
